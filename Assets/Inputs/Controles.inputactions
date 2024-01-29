@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "43d81f9c-4825-4726-b71a-1089894002df",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -27,6 +27,15 @@
                     "name": "Flechas",
                     "type": "Value",
                     "id": "939d33b1-e231-4843-8690-974bb0845770",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RotaCamara",
+                    "type": "Value",
+                    "id": "4f4a3e72-985c-4470-9dbe-1a3d799525ff",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -101,6 +110,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "689fa9c5-0eca-4db3-aebe-a32da604e0cc",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mover",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "b5e25cfe-7320-4292-b332-5cfba8075709",
                     "path": "2DVector",
@@ -154,6 +174,28 @@
                     "action": "Flechas",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7a02a703-3c23-430e-804b-3a6b80369a93",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotaCamara",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d02366a-647e-42ca-aad2-59aecc077297",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotaCamara",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

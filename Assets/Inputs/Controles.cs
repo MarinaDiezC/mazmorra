@@ -41,7 +41,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""43d81f9c-4825-4726-b71a-1089894002df"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -49,6 +49,15 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""name"": ""Flechas"",
                     ""type"": ""Value"",
                     ""id"": ""939d33b1-e231-4843-8690-974bb0845770"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RotaCamara"",
+                    ""type"": ""Value"",
+                    ""id"": ""4f4a3e72-985c-4470-9dbe-1a3d799525ff"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -123,6 +132,17 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""689fa9c5-0eca-4db3-aebe-a32da604e0cc"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""2D Vector"",
                     ""id"": ""b5e25cfe-7320-4292-b332-5cfba8075709"",
                     ""path"": ""2DVector"",
@@ -176,6 +196,28 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""action"": ""Flechas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a02a703-3c23-430e-804b-3a6b80369a93"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotaCamara"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d02366a-647e-42ca-aad2-59aecc077297"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotaCamara"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -204,6 +246,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         m_Gameplay_Interactuar = m_Gameplay.FindAction("Interactuar", throwIfNotFound: true);
         m_Gameplay_Mover = m_Gameplay.FindAction("Mover", throwIfNotFound: true);
         m_Gameplay_Flechas = m_Gameplay.FindAction("Flechas", throwIfNotFound: true);
+        m_Gameplay_RotaCamara = m_Gameplay.FindAction("RotaCamara", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,6 +309,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Interactuar;
     private readonly InputAction m_Gameplay_Mover;
     private readonly InputAction m_Gameplay_Flechas;
+    private readonly InputAction m_Gameplay_RotaCamara;
     public struct GameplayActions
     {
         private @Controles m_Wrapper;
@@ -273,6 +317,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         public InputAction @Interactuar => m_Wrapper.m_Gameplay_Interactuar;
         public InputAction @Mover => m_Wrapper.m_Gameplay_Mover;
         public InputAction @Flechas => m_Wrapper.m_Gameplay_Flechas;
+        public InputAction @RotaCamara => m_Wrapper.m_Gameplay_RotaCamara;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,6 +336,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Flechas.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
                 @Flechas.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
                 @Flechas.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
+                @RotaCamara.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
+                @RotaCamara.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
+                @RotaCamara.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +352,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Flechas.started += instance.OnFlechas;
                 @Flechas.performed += instance.OnFlechas;
                 @Flechas.canceled += instance.OnFlechas;
+                @RotaCamara.started += instance.OnRotaCamara;
+                @RotaCamara.performed += instance.OnRotaCamara;
+                @RotaCamara.canceled += instance.OnRotaCamara;
             }
         }
     }
@@ -322,5 +373,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         void OnInteractuar(InputAction.CallbackContext context);
         void OnMover(InputAction.CallbackContext context);
         void OnFlechas(InputAction.CallbackContext context);
+        void OnRotaCamara(InputAction.CallbackContext context);
     }
 }
