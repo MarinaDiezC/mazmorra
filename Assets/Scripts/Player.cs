@@ -7,33 +7,51 @@ public class Player : MonoBehaviour
 
     //Direccion que marca el input (mando, teclado)
     private Vector2 direccionInput;
-    private Vector3 direccionMovimiento;
-    [SerializeField] private float velocidad;
-    [SerializeField] private float tiempoRotacion;
+    private Vector3 direccionMovimiento, vectorVertical;
 
     private CharacterController controller;
+    [SerializeField] private float velocidad;
+    [SerializeField] private float tiempoRotacion;
+    [SerializeField] private float factorGravedad;
+    [SerializeField] private float alturaSalto;
+
+    [Header("Deteción suelo")]
+    [SerializeField] private Transform pies;
+    [SerializeField] private float radioDeteccion;
+    [SerializeField] private LayerMask queEsSuelo;
+    private bool enSuelo;
 
     Controles misControles;
+    private Animator anim;
 
-    private float velocidadRotacion;
+    private float velocidadRotacion;   
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
-
+        
     }
     private void OnEnable() //Se activa cada vez que se activa el script.
     {
         misControles = new Controles();
-
         misControles.Gameplay.Enable();
 
         misControles.Gameplay.Interactuar.started += Interactuar;
-        misControles.Gameplay.Mover.started += Mover;
-        misControles.Gameplay.Mover.canceled += CancelarMovimiento; ;   
+        misControles.Gameplay.Mover.performed += Mover;
+        misControles.Gameplay.Mover.canceled += CancelarMovimiento; ;
+        misControles.Gameplay.Saltar.started += Saltar;
+    }
+
+    private void Saltar(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (enSuelo)
+        {
+            vectorVertical.y = Mathf.Sqrt(-2 * alturaSalto * factorGravedad);
+        }
     }
 
     private void Interactuar(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -45,18 +63,21 @@ public class Player : MonoBehaviour
     {
         direccionInput = ctx.ReadValue<Vector2>();
         Debug.Log("Me muevo hacia..." + direccionInput);
+        anim.SetFloat("velocidad", direccionInput.magnitude);
     }
     
     private void CancelarMovimiento(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
     {
         direccionInput = ctx.ReadValue<Vector2>();
         Debug.Log("Me muevo hacia..." + direccionInput);
+        anim.SetFloat("velocidad", direccionInput.magnitude);
     }   
     
 
     void Update()
     {
         MoverYRotar();
+        AplicarGravedad();
     }
 
     private void MoverYRotar()
@@ -83,5 +104,22 @@ public class Player : MonoBehaviour
             controller.Move(direccionMovimiento * velocidad * direccionInput.magnitude * Time.deltaTime);
         }
         
+    }
+    
+    private void AplicarGravedad()
+    {
+        vectorVertical.y += factorGravedad * Time.deltaTime;
+        controller.Move(vectorVertical * Time.deltaTime); //El delta es doble porque la gravedad se mide por m/s^2
+        //Physics.CheckSphere()
+        enSuelo = Physics.CheckSphere(pies.position, radioDeteccion, queEsSuelo);
+
+        if(enSuelo && controller.velocity.y < 0) //Si aterrizo
+        {
+            vectorVertical.y = 0; //Reseteo mi gravedad para que no se acumule.
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(pies.position, radioDeteccion);
     }
 }

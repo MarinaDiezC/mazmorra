@@ -46,15 +46,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Flechas"",
-                    ""type"": ""Value"",
-                    ""id"": ""939d33b1-e231-4843-8690-974bb0845770"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""RotaCamara"",
                     ""type"": ""Value"",
                     ""id"": ""4f4a3e72-985c-4470-9dbe-1a3d799525ff"",
@@ -62,6 +53,15 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Saltar"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd7e040e-5e38-42fe-b909-6b4df307332c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +132,61 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Flechas"",
+                    ""id"": ""b33df372-e40e-4402-9dd5-ee0a81fd217d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b0019787-f508-4560-b61b-a4f0c84ace2d"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""fbec1a2f-663f-4550-911b-2d53fe05b590"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""04166d90-f468-4c18-b49e-a10e701870ce"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2615c590-a6c6-47c7-8262-be059318ab0f"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""689fa9c5-0eca-4db3-aebe-a32da604e0cc"",
                     ""path"": ""<Gamepad>/leftStick"",
@@ -141,61 +196,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""action"": ""Mover"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""b5e25cfe-7320-4292-b332-5cfba8075709"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Flechas"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""53611550-56af-410a-b907-167cd8f9075c"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Flechas"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b4d1e9e1-c6a5-49fa-bbc6-cce4c566f115"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Flechas"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""31e1ef7c-07e3-4c07-a1a9-3456468434f5"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Flechas"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c8830389-7750-423e-b15a-c4d1632b1185"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Flechas"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -216,6 +216,28 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RotaCamara"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""410cf84c-5c30-49b8-b33d-23e91d43725f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Saltar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ae9e9d7-5f84-4d9d-8506-1da078a22dbc"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Saltar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -245,8 +267,8 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Interactuar = m_Gameplay.FindAction("Interactuar", throwIfNotFound: true);
         m_Gameplay_Mover = m_Gameplay.FindAction("Mover", throwIfNotFound: true);
-        m_Gameplay_Flechas = m_Gameplay.FindAction("Flechas", throwIfNotFound: true);
         m_Gameplay_RotaCamara = m_Gameplay.FindAction("RotaCamara", throwIfNotFound: true);
+        m_Gameplay_Saltar = m_Gameplay.FindAction("Saltar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,16 +330,16 @@ public partial class @Controles : IInputActionCollection2, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Interactuar;
     private readonly InputAction m_Gameplay_Mover;
-    private readonly InputAction m_Gameplay_Flechas;
     private readonly InputAction m_Gameplay_RotaCamara;
+    private readonly InputAction m_Gameplay_Saltar;
     public struct GameplayActions
     {
         private @Controles m_Wrapper;
         public GameplayActions(@Controles wrapper) { m_Wrapper = wrapper; }
         public InputAction @Interactuar => m_Wrapper.m_Gameplay_Interactuar;
         public InputAction @Mover => m_Wrapper.m_Gameplay_Mover;
-        public InputAction @Flechas => m_Wrapper.m_Gameplay_Flechas;
         public InputAction @RotaCamara => m_Wrapper.m_Gameplay_RotaCamara;
+        public InputAction @Saltar => m_Wrapper.m_Gameplay_Saltar;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -333,12 +355,12 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Mover.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMover;
                 @Mover.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMover;
                 @Mover.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMover;
-                @Flechas.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
-                @Flechas.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
-                @Flechas.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFlechas;
                 @RotaCamara.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
                 @RotaCamara.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
                 @RotaCamara.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRotaCamara;
+                @Saltar.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
+                @Saltar.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
+                @Saltar.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -349,12 +371,12 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Mover.started += instance.OnMover;
                 @Mover.performed += instance.OnMover;
                 @Mover.canceled += instance.OnMover;
-                @Flechas.started += instance.OnFlechas;
-                @Flechas.performed += instance.OnFlechas;
-                @Flechas.canceled += instance.OnFlechas;
                 @RotaCamara.started += instance.OnRotaCamara;
                 @RotaCamara.performed += instance.OnRotaCamara;
                 @RotaCamara.canceled += instance.OnRotaCamara;
+                @Saltar.started += instance.OnSaltar;
+                @Saltar.performed += instance.OnSaltar;
+                @Saltar.canceled += instance.OnSaltar;
             }
         }
     }
@@ -372,7 +394,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
     {
         void OnInteractuar(InputAction.CallbackContext context);
         void OnMover(InputAction.CallbackContext context);
-        void OnFlechas(InputAction.CallbackContext context);
         void OnRotaCamara(InputAction.CallbackContext context);
+        void OnSaltar(InputAction.CallbackContext context);
     }
 }
