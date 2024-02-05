@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
     void Start()
     {
@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     {
         if (enSuelo)
         {
+            anim.SetBool("grounded", false);
+            anim.SetTrigger("jump");
             vectorVertical.y = Mathf.Sqrt(-2 * alturaSalto * factorGravedad);
         }
     }
@@ -96,9 +98,6 @@ public class Player : MonoBehaviour
             //Mi direccion de movimiento es en función del Z del mundo PERO rotando tanto como "anguloObjetivo".
             direccionMovimiento= Quaternion.Euler(0, anguloObjetivo, 0) * new Vector3(0, 0, 1);
 
-            //Me muevo.
-            direccionMovimiento = new Vector3(direccionInput.x, 0, direccionInput.y);
-            controller.Move(direccionMovimiento * velocidad * Time.deltaTime);
 
             //Me muevo, considerando la magnitud del vector de input: a más vuelque el joystick, más rápido iré-
             controller.Move(direccionMovimiento * velocidad * direccionInput.magnitude * Time.deltaTime);
@@ -111,13 +110,21 @@ public class Player : MonoBehaviour
         vectorVertical.y += factorGravedad * Time.deltaTime;
         controller.Move(vectorVertical * Time.deltaTime); //El delta es doble porque la gravedad se mide por m/s^2
         //Physics.CheckSphere()
-        enSuelo = Physics.CheckSphere(pies.position, radioDeteccion, queEsSuelo);
+        enSuelo = Physics.CheckSphere(pies.position, radioDeteccion, queEsSuelo); //este bool da la informacion de donde está el suelo
+
+        anim.SetBool("grounded", enSuelo); //En todo momento estoy pendiente si pongo grounded a true o false.
 
         if(enSuelo && controller.velocity.y < 0) //Si aterrizo
         {
-            vectorVertical.y = 0; //Reseteo mi gravedad para que no se acumule.
+            anim.SetBool("falling", false);
+            vectorVertical.y = 0; //Reseteo mi gravedad para que no se acumule.         
         }
-    }
+        else if(controller.velocity.y < 0) //SI estoy cayendo
+        {
+            anim.SetBool("falling", true);
+        }
+    }   
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(pies.position, radioDeteccion);
