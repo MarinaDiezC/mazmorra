@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7051702585963951745}
   - component: {fileID: 8468491616375067734}
   - component: {fileID: 6179455384227401833}
-  - component: {fileID: 866025323637737189}
-  - component: {fileID: 2327219715812768963}
   - component: {fileID: 8217079127317774820}
   m_Layer: 0
   m_Name: Doorway Gated Variation 001
@@ -34,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6778290608801413986}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8468491616375067734
 MeshFilter:
@@ -88,48 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &866025323637737189
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2626843362862958615}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4537615, y: 3.0525134, z: 2.9704742}
-  m_Center: {x: -0.019552603, y: 1.506467, z: 0.036320448}
---- !u!65 &2327219715812768963
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2626843362862958615}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0197372, y: 3.0525134, z: 1.0278693}
-  m_Center: {x: -0.008289337, y: 1.506467, z: -1.935494}
 --- !u!65 &8217079127317774820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,19 +94,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2626843362862958615}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0197372, y: 3.0525134, z: 1.0081556}
-  m_Center: {x: -0.008289337, y: 1.506467, z: 2.0218668}
+  serializedVersion: 2
+  m_Size: {x: 1.0197372, y: 3.0525134, z: 4.9753733}
+  m_Center: {x: -0.008289337, y: 1.506467, z: 0.038258076}
 --- !u!1 &8626869552712250160
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,5 +129,5 @@ Transform:
   m_Children:
   - {fileID: 7051702585963951745}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

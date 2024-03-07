@@ -62,6 +62,15 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Atacar"",
+                    ""type"": ""Button"",
+                    ""id"": ""db72bda7-3c17-43de-bf55-82270fc4dc4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -240,6 +249,28 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""action"": ""Saltar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""162e0b40-b2a1-4234-badd-9f77630a81eb"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Atacar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d51ad47-2b92-4466-9b92-15ce638ce6a4"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Atacar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +300,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         m_Gameplay_Mover = m_Gameplay.FindAction("Mover", throwIfNotFound: true);
         m_Gameplay_RotaCamara = m_Gameplay.FindAction("RotaCamara", throwIfNotFound: true);
         m_Gameplay_Saltar = m_Gameplay.FindAction("Saltar", throwIfNotFound: true);
+        m_Gameplay_Atacar = m_Gameplay.FindAction("Atacar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -332,6 +364,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Mover;
     private readonly InputAction m_Gameplay_RotaCamara;
     private readonly InputAction m_Gameplay_Saltar;
+    private readonly InputAction m_Gameplay_Atacar;
     public struct GameplayActions
     {
         private @Controles m_Wrapper;
@@ -340,6 +373,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         public InputAction @Mover => m_Wrapper.m_Gameplay_Mover;
         public InputAction @RotaCamara => m_Wrapper.m_Gameplay_RotaCamara;
         public InputAction @Saltar => m_Wrapper.m_Gameplay_Saltar;
+        public InputAction @Atacar => m_Wrapper.m_Gameplay_Atacar;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -361,6 +395,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Saltar.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
                 @Saltar.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
                 @Saltar.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSaltar;
+                @Atacar.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAtacar;
+                @Atacar.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAtacar;
+                @Atacar.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAtacar;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -377,6 +414,9 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 @Saltar.started += instance.OnSaltar;
                 @Saltar.performed += instance.OnSaltar;
                 @Saltar.canceled += instance.OnSaltar;
+                @Atacar.started += instance.OnAtacar;
+                @Atacar.performed += instance.OnAtacar;
+                @Atacar.canceled += instance.OnAtacar;
             }
         }
     }
@@ -396,5 +436,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
         void OnMover(InputAction.CallbackContext context);
         void OnRotaCamara(InputAction.CallbackContext context);
         void OnSaltar(InputAction.CallbackContext context);
+        void OnAtacar(InputAction.CallbackContext context);
     }
 }
