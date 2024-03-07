@@ -10,7 +10,7 @@ public abstract class Interactuable : MonoBehaviour //Funciona como un contrato.
     public void ActivarIcono()
     {
         canvasInteraccion.SetActive(true);
-    }    
+    }
     
     public void DesactivarIcono()
     {
