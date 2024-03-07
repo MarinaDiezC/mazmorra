@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3581499096019965120}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6940080100225650062
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2695143649710744193}
   - component: {fileID: 2476629142643327114}
   - component: {fileID: 2998452368191297661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Book Variation 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5231438414540495841}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2695143649710744193
 MeshFilter:
@@ -125,16 +125,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940080100225650062}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Size: {x: 0.11223984, y: 0.36038715, z: 0.37823153}
   m_Center: {x: 0.0013002828, y: -0.01465553, z: 0.03050483}

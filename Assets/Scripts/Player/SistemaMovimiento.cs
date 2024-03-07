@@ -93,7 +93,7 @@ public class SistemaMovimiento : MonoBehaviour
             direccionMovimiento= Quaternion.Euler(0, anguloObjetivo, 0) * new Vector3(0, 0, 1);
 
             //Me muevo, considerando la magnitud del vector de input: a más vuelque el joystick, más rápido iré-
-            controller.Move(direccionMovimiento * velocidad * direccionInput.magnitude * Time.deltaTime);
+            controller.Move(direccionMovimiento *velocidad * direccionInput.magnitude * Time.deltaTime);
         }
         
     }

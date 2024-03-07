@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8076866308431420103}
   - component: {fileID: 7769894917561011699}
   - component: {fileID: 1401081672180910576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Torch.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &935806930815462672
 Transform:
@@ -111,12 +111,13 @@ GameObject:
   - component: {fileID: 7206927362178746234}
   - component: {fileID: 4220554822487122790}
   - component: {fileID: 3780298631010160525}
-  m_Layer: 0
+  - component: {fileID: 1593009401}
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7206927362178746234
 Transform:
@@ -184,7 +185,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -215,6 +216,26 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1593009401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712300021360254310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &749987270279788626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,10 +243,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 935806930815462672}
     m_Modifications:
+    - target: {fileID: 363946921170397246, guid: 4daecac5922e4cf46914efecc3de4129,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4323537793554766054, guid: a59f6548c14dfa84ba2ca07e21ce1543,
+        type: 3}
     - target: {fileID: 5866797894309309924, guid: 4daecac5922e4cf46914efecc3de4129,
         type: 3}
       propertyPath: m_Name
       value: Fire_Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866797894309309924, guid: 4daecac5922e4cf46914efecc3de4129,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866797894309309924, guid: 4daecac5922e4cf46914efecc3de4129,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9100074794992775766, guid: 4daecac5922e4cf46914efecc3de4129,
         type: 3}

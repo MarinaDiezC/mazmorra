@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8468491616375067734}
   - component: {fileID: 6179455384227401833}
   - component: {fileID: 8217079127317774820}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Doorway Gated Variation 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6778290608801413986}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gated Doorway Parent 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

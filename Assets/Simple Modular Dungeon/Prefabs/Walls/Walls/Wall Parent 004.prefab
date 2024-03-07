@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7503556185033960949}
   - component: {fileID: 8735099329889444847}
   - component: {fileID: 44039298809520151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall Variation 004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6534347502814029905}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall Parent 004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

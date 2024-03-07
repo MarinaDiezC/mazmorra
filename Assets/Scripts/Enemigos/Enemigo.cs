@@ -33,6 +33,8 @@ public class Enemigo : MonoBehaviour
     public float RadioVision { get => radioVision; }
     public float AnguloVision { get => anguloVision; }
 
+
+
     // Start is called before the first frame update
     void Start()
     {

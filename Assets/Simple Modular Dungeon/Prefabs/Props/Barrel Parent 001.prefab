@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8072014167217623078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel Parent 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2274921500216082336}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8392724812827561664
 GameObject:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1988944631416482983}
   - component: {fileID: 4020321148282642350}
   - component: {fileID: 678332881854638717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel Variation 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8072014167217623078}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1988944631416482983
 MeshFilter:
@@ -125,17 +125,9 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8392724812827561664}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
+  serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8577550953178240769, guid: a59f6548c14dfa84ba2ca07e21ce1543, type: 3}
