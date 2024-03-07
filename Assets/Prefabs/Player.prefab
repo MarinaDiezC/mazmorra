@@ -2707,7 +2707,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   puntoInteraccion: {fileID: 2158148627662613213}
-  gM: {fileID: 0}
+  gM: {fileID: 11400000, guid: a783e2ecbf0b42642856cebe61eee689, type: 2}
 --- !u!143 &7640653851094531712
 CharacterController:
   m_ObjectHideFlags: 0
